@@ -94,6 +94,22 @@ export const cardInfo = (state = initState, action) => {
       ]);
     case "DELETE_CARD":
       return (state = state.filter((el) => el.id !== action.payload));
+    case "CHECK_OPTION":
+      return state.map((el) =>
+        el.id === action.payload.cardId
+          ? {
+              ...el,
+              options: el.options.map((option) =>
+                option.id === action.payload.optionId
+                  ? {
+                      ...option,
+                      checked: !option.checked,
+                    }
+                  : option
+              ),
+            }
+          : el
+      );
     default:
       return state;
   }

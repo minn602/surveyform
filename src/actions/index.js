@@ -52,3 +52,13 @@ export const deleteCard = (id) => {
     payload: id,
   };
 };
+
+export const checkOption = (cardId, optionId) => {
+  return {
+    type: "CHECK_OPTION",
+    payload: {
+      cardId,
+      optionId,
+    },
+  };
+};

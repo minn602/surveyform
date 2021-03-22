@@ -9,6 +9,7 @@ import {
   updateOption,
   addCard,
   deleteCard,
+  checkOption,
 } from "../../../actions";
 import { QuestionInfo } from "./Components/QuestionInfo";
 import { OptionForm } from "./Components/OptionForm";
@@ -52,6 +53,10 @@ export const SurveyCard = () => {
     setTypeOfOptionInput(evt.target.value);
   };
 
+  const toggleOptionInput = (cardId, optionId) => {
+    dispatch(checkOption(cardId, optionId));
+  };
+
   return (
     <>
       {cardInfo.map((card) => {
@@ -70,6 +75,7 @@ export const SurveyCard = () => {
               changeOption={changeOption}
               addOptionForm={addOptionForm}
               typeOfOptionInput={typeOfOptionInput}
+              toggleOptionInput={toggleOptionInput}
             />
             <CardButton
               id={card.id}
