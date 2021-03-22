@@ -13,15 +13,12 @@ import {
 import { QuestionInfo } from "./Components/QuestionInfo";
 import { OptionForm } from "./Components/OptionForm";
 import { CardButton } from "./Components/CardButton";
+import { OptionFilter } from "./Components/OptionFilter";
 
 export const SurveyCard = () => {
-  // const [numsOfOptions, setNumsOfOptions] = useState(1);
+  const [typeOfOptionInput, setTypeOfOptionInput] = useState("radio");
   const cardInfo = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
-
-  // const addOptions = () => {
-  //   setNumsOfOptions((prev) => prev + 1);
-  // };
 
   const changeTitle = (id, val) => {
     dispatch(updateTitle(id, val));
@@ -49,8 +46,10 @@ export const SurveyCard = () => {
 
   const deleteCardForm = (id) => {
     dispatch(deleteCard(id));
-    console.log(id);
-    console.log(cardInfo);
+  };
+
+  const toggleInputType = (evt) => {
+    setTypeOfOptionInput(evt.target.value);
   };
 
   return (
@@ -63,12 +62,14 @@ export const SurveyCard = () => {
               changeTitle={changeTitle}
               changeDesc={changeDesc}
             />
+            <OptionFilter toggleInputType={toggleInputType} />
             <OptionForm
               id={card.id}
               options={card.options}
               deleteOptionForm={deleteOptionForm}
               changeOption={changeOption}
               addOptionForm={addOptionForm}
+              typeOfOptionInput={typeOfOptionInput}
             />
             <CardButton
               id={card.id}

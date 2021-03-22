@@ -7,13 +7,14 @@ export const OptionForm = ({
   deleteOptionForm,
   changeOption,
   addOptionForm,
+  typeOfOptionInput,
 }) => {
   return (
     <>
       {options.map((option) => {
         return (
           <Wrapper key={option.id}>
-            <input type="radio" />
+            <input type={typeOfOptionInput} />
             <TextInput
               onChange={(evt) => changeOption(id, option.id, evt.target.value)}
               type="text"
