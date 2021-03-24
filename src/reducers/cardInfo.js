@@ -93,7 +93,7 @@ export const cardInfo = (state = initState, action) => {
         },
       ]);
     case "DELETE_CARD":
-      return (state = state.filter((el) => el.id !== action.payload));
+      return state.filter((el) => el.id !== action.payload);
     case "CHECK_OPTION":
       return state.map((el) =>
         el.id === action.payload.cardId

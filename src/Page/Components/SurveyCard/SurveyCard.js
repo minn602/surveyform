@@ -47,6 +47,7 @@ export const SurveyCard = () => {
 
   const deleteCardForm = (id) => {
     dispatch(deleteCard(id));
+    console.log(id, "clicked");
   };
 
   const toggleInputType = (evt) => {
