@@ -27,6 +27,7 @@ export const OptionForm = ({
             <Button onClick={() => deleteOptionForm(id, option.id)}>
               <img alt="delete-button" src="/images/minus.png" />
             </Button>
+            {/* 옵션 중 가장 마지막 옵션에만 추가버튼을 추가하여 직관적으로 옵션이 추가되는 버튼임을 명시 */}
             {options.length === option.id && (
               <Button onClick={() => addOptionForm(id)}>
                 <img alt="add-button" src="/images/add.png" />

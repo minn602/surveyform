@@ -21,39 +21,48 @@ export const SurveyCard = () => {
   const cardInfo = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
 
+  //title input event handler
   const changeTitle = (id, val) => {
     dispatch(updateTitle(id, val));
   };
 
+  //description input event handler
   const changeDesc = (id, val) => {
     dispatch(updateDesc(id, val));
   };
 
+  //add option form click trigger
   const addOptionForm = (id) => {
     dispatch(addOptions(id));
   };
 
+  //delete option form click trigger
   const deleteOptionForm = (cardId, optionId) => {
     dispatch(deleteOption(cardId, optionId));
   };
 
+  //option content input event handler
   const changeOption = (cardId, optionId, val) => {
     dispatch(updateOption(cardId, optionId, val));
   };
 
+  //add another survey form
   const addCardForm = () => {
     dispatch(addCard());
   };
 
+  //delete survey form
   const deleteCardForm = (id) => {
     dispatch(deleteCard(id));
     console.log(id, "clicked");
   };
 
+  //toggle the state of option checking input
   const toggleInputType = (evt) => {
     setTypeOfOptionInput(evt.target.value);
   };
 
+  //convert option input type
   const toggleOptionInput = (cardId, optionId) => {
     dispatch(checkOption(cardId, optionId));
   };
