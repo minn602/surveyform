@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-export const SubmitBtn = ({ submitHandler }) => {
-  return <Button onClick={submitHandler}>Submit</Button>;
+export const SubmitBtn = ({ submitHandler, cardInfo }) => {
+  return <Button onClick={() => submitHandler(cardInfo)}>Submit</Button>;
 };
 
 const Button = styled.button`

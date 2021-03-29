@@ -1,6 +1,14 @@
-## 리액트로 만든 서베이 폼 입니다.
+## Survey Form
 
-### 실행방법
+### 소개
+
+React.js로 만들어진 서베이 폼 입니다
+
+### 기술스택
+
+React.js, Redux, Styled-Components
+
+### 시작하기
 
 1. yarn install
 2. yarn start

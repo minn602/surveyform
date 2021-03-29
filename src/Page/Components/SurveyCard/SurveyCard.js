@@ -15,8 +15,9 @@ import { QuestionInfo } from "./Components/QuestionInfo";
 import { OptionForm } from "./Components/OptionForm";
 import { CardButton } from "./Components/CardButton";
 import { OptionFilter } from "./Components/OptionFilter";
+import { AlertCommnet } from "./Components/AlertCommnet";
 
-export const SurveyCard = () => {
+export const SurveyCard = ({ alertComment }) => {
   const [typeOfOptionInput, setTypeOfOptionInput] = useState("radio");
   const cardInfo = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
@@ -92,6 +93,7 @@ export const SurveyCard = () => {
               addCardForm={addCardForm}
               deleteCardForm={deleteCardForm}
             />
+            <AlertCommnet alertComment={alertComment} />
           </SurveyFormCard>
         );
       })}
