@@ -55,7 +55,6 @@ export const SurveyCard = ({ alertComment }) => {
   //delete survey form
   const deleteCardForm = (id) => {
     dispatch(deleteCard(id));
-    console.log(id, "clicked");
   };
 
   //toggle the state of option checking input
