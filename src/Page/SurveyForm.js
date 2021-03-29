@@ -11,16 +11,9 @@ export const SurveyForm = () => {
   const submitHandler = (cardInfo) => {
     //form validation 추가
     if (cardInfo.length === 1 && cardInfo[0].title === "") {
-      setAlertComment("질문의 제목을 입력해주세요");
+      setAlertComment("질문에 대한 정보를 입력해주세요");
     }
-    if (cardInfo.length === 1 && cardInfo[0].desc === "") {
-      setAlertComment("질문에 대한 설명을 입력해주세요");
-    }
-    if (
-      cardInfo.length === 1 &&
-      cardInfo[0].title !== "" &&
-      cardInfo[0].desc !== ""
-    ) {
+    if (cardInfo.length === 1 && cardInfo[0].title !== "") {
       console.log(cardInfo);
       //유저에게 폼이 제출되었음을 알려주는 알림 추가
       alert("작성한 폼이 제출완료되었습니다!");
