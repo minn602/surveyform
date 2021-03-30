@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { SurveyCard } from "./Components/SurveyCard/SurveyCard";
-import { SubmitBtn } from "./Components/SurveyCard/Components/SubmitBtn";
+import SurveyCard from "./Components/SurveyCard/SurveyCard";
+import SubmitBtn from "./Components/SurveyCard/Components/SubmitBtn";
 
-export const SurveyForm = () => {
+const SurveyForm = () => {
   const cardInfo = useSelector((state) => state.cardInfo);
   const [alertComment, setAlertComment] = useState("");
 
@@ -27,6 +27,8 @@ export const SurveyForm = () => {
     </Wrapper>
   );
 };
+
+export default SurveyForm;
 
 const Wrapper = styled.section`
   width: 100 vw;

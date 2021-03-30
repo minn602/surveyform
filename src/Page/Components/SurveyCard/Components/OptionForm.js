@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const OptionForm = ({
+const OptionForm = ({
   id,
   options,
   deleteOptionForm,
@@ -39,6 +39,8 @@ export const OptionForm = ({
     </>
   );
 };
+
+export default OptionForm;
 
 const Wrapper = styled.div`
   height: 25px;

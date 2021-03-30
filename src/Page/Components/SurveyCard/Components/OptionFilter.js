@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export const OptionFilter = ({ toggleInputType }) => {
+const OptionFilter = ({ toggleInputType }) => {
   return (
     <Wrapper>
       <SelectOption
-        onChange={toggleInputType}
+        onChange={() => toggleInputType()}
         name="convertOptionInput"
         id="optionfilter"
       >
@@ -15,6 +15,8 @@ export const OptionFilter = ({ toggleInputType }) => {
     </Wrapper>
   );
 };
+
+export default OptionFilter;
 
 const Wrapper = styled.div`
   background-color: #fff;

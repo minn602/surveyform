@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export const AlertCommnet = ({ alertComment }) => {
+const AlertCommnet = ({ alertComment }) => {
   return <Comment>{alertComment !== "" && `* ${alertComment}`}</Comment>;
 };
+
+export default AlertCommnet;
 
 const Comment = styled.p`
   position: absolute;
