@@ -11,13 +11,13 @@ import {
   deleteCard,
   checkOption,
 } from "../../../actions";
-import { QuestionInfo } from "./Components/QuestionInfo";
-import { OptionForm } from "./Components/OptionForm";
-import { CardButton } from "./Components/CardButton";
-import { OptionFilter } from "./Components/OptionFilter";
-import { AlertCommnet } from "./Components/AlertCommnet";
+import QuestionInfo from "./Components/QuestionInfo";
+import OptionForm from "./Components/OptionForm";
+import CardButton from "./Components/CardButton";
+import OptionFilter from "./Components/OptionFilter";
+import AlertCommnet from "./Components/AlertCommnet";
 
-export const SurveyCard = ({ alertComment }) => {
+const SurveyCard = ({ alertComment }) => {
   const [typeOfOptionInput, setTypeOfOptionInput] = useState("radio");
   const cardInfo = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
@@ -58,6 +58,7 @@ export const SurveyCard = ({ alertComment }) => {
   };
 
   //toggle the state of option checking input
+  //이렇게 작성하면 바꿀때마다 모든 카드들의 인풋타입이변경됨.
   const toggleInputType = (evt) => {
     setTypeOfOptionInput(evt.target.value);
   };
@@ -99,6 +100,8 @@ export const SurveyCard = ({ alertComment }) => {
     </>
   );
 };
+
+export default SurveyCard;
 
 const SurveyFormCard = styled.section`
   width: 60%;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const QuestionInfo = ({ id, changeTitle, changeDesc }) => {
+const QuestionInfo = ({ id, changeTitle, changeDesc }) => {
   return (
     <Wrapper>
       <TitleInput
@@ -17,6 +17,8 @@ export const QuestionInfo = ({ id, changeTitle, changeDesc }) => {
     </Wrapper>
   );
 };
+
+export default QuestionInfo;
 
 const Wrapper = styled.div`
   margin-bottom: 14px;

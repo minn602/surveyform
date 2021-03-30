@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "./Button";
+import Button from "./Button";
 
-export const CardButton = ({ id, addCardForm, deleteCardForm }) => {
+const CardButton = ({ id, addCardForm, deleteCardForm }) => {
   return (
     <Wrapper>
       <Button clickHandler={addCardForm} iconSrc="/images/addBtn.png" />
@@ -13,6 +13,8 @@ export const CardButton = ({ id, addCardForm, deleteCardForm }) => {
     </Wrapper>
   );
 };
+
+export default CardButton;
 
 const Wrapper = styled.div`
   position: absolute;

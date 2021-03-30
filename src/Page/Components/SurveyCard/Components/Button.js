@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Button = ({ iconSrc, clickHandler }) => {
+const Button = ({ iconSrc, clickHandler }) => {
   return (
     <ButtonWrapper onClick={clickHandler}>
       <img src={iconSrc} />
     </ButtonWrapper>
   );
 };
+
+export default Button;
 
 const ButtonWrapper = styled.button`
   border: none;

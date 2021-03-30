@@ -14,6 +14,8 @@ const initState = [
   },
 ];
 
+//id를 length 기준으로 선언하니 중간 옵션이 삭제될때 배열 인덱스 문제가 발생함
+
 export const cardInfo = (state = initState, action) => {
   switch (action.type) {
     case "UPDATE_TITLE":

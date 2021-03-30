@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export const SubmitBtn = ({ submitHandler, cardInfo }) => {
+const SubmitBtn = ({ submitHandler, cardInfo }) => {
   return <Button onClick={() => submitHandler(cardInfo)}>Submit</Button>;
 };
+
+export default SubmitBtn;
 
 const Button = styled.button`
   padding: 10px 20px;
