@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const OptionFilter = ({ toggleInputType }) => {
+const OptionFilter = ({ id, toggleInputType }) => {
   return (
     <Wrapper>
       <SelectOption
-        onChange={() => toggleInputType()}
+        onChange={(evt) => toggleInputType(evt, id)}
         name="convertOptionInput"
         id="optionfilter"
       >
