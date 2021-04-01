@@ -19,6 +19,7 @@ import AlertCommnet from "./Components/AlertCommnet";
 
 const SurveyCard = ({ alertComment }) => {
   const [typeOfOptionInput, setTypeOfOptionInput] = useState("radio");
+  const [currentTargetId, setCurrentTargetId] = useState(1);
   const cardInfo = useSelector((state) => state.cardInfo);
   const dispatch = useDispatch();
 
@@ -58,9 +59,9 @@ const SurveyCard = ({ alertComment }) => {
   };
 
   //toggle the state of option checking input
-  //이렇게 작성하면 바꿀때마다 모든 카드들의 인풋타입이변경됨.
-  const toggleInputType = (evt) => {
+  const toggleInputType = (evt, id) => {
     setTypeOfOptionInput(evt.target.value);
+    setCurrentTargetId(id);
   };
 
   //convert option input type
@@ -78,7 +79,7 @@ const SurveyCard = ({ alertComment }) => {
               changeTitle={changeTitle}
               changeDesc={changeDesc}
             />
-            <OptionFilter toggleInputType={toggleInputType} />
+            <OptionFilter id={card.id} toggleInputType={toggleInputType} />
             <OptionForm
               id={card.id}
               options={card.options}
@@ -87,6 +88,7 @@ const SurveyCard = ({ alertComment }) => {
               addOptionForm={addOptionForm}
               typeOfOptionInput={typeOfOptionInput}
               toggleOptionInput={toggleOptionInput}
+              currentTargetId={currentTargetId}
             />
             <CardButton
               id={card.id}
