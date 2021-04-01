@@ -59,7 +59,6 @@ const SurveyCard = ({ alertComment }) => {
   };
 
   //toggle the state of option checking input
-  //이렇게 작성하면 바꿀때마다 모든 카드들의 인풋타입이변경됨.
   const toggleInputType = (evt, id) => {
     setTypeOfOptionInput(evt.target.value);
     setCurrentTargetId(id);
